@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chameleon DOM</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-shell">
+    <!-- Header & Master Toggle -->
+    <header class="header">
+      <div class="brand">
+        <img src="icons/icon48.png" alt="Chameleon DOM" class="brand-icon" />
+        <div class="brand-text">
+          <h1>Chameleon DOM</h1>
+          <span class="subtitle">Procedural IK Gecko Engine</span>
+        </div>
+      </div>
+      <label class="switch" title="Global Enable / Disable">
+        <input type="checkbox" id="toggle-enabled" checked />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <!-- Per-Site Pause Card -->
+    <section class="card site-card">
+      <div class="row-between">
+        <div class="site-info">
+          <span class="label-title">Pause on This Site</span>
+          <span class="domain-pill" id="current-domain">active tab</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-pause-site" />
+          <span class="slider slider-warn"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Skin / Camouflage Mode -->
+    <section class="card">
+      <div class="row-between mb-6">
+        <label class="label-title" for="select-skin">Skin / Camouflage Mode</label>
+        <span class="swatch-dot" id="skin-swatch"></span>
+      </div>
+      <div class="select-wrap">
+        <select id="select-skin">
+          <option value="auto">Auto-Camouflage (Live Page Blend)</option>
+          <option value="emerald">Emerald Day Gecko</option>
+          <option value="leopard">Leopard Gecko</option>
+          <option value="tokay">Tokay Blue-Orange</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Sliders: Gecko Count, Size, Crawl Speed -->
+    <section class="card controls-group">
+      <div class="control-item">
+        <div class="row-between">
+          <label class="label-title" for="range-count">Gecko Count</label>
+          <span class="value-badge" id="val-count">2</span>
+        </div>
+        <input type="range" id="range-count" min="1" max="4" step="1" value="2" />
+      </div>
+
+      <div class="control-item">
+        <div class="row-between">
+          <label class="label-title" for="range-size">Gecko Size</label>
+          <span class="value-badge" id="val-size">1.0x</span>
+        </div>
+        <input type="range" id="range-size" min="0.6" max="1.6" step="0.1" value="1.0" />
+      </div>
+
+      <div class="control-item">
+        <div class="row-between">
+          <label class="label-title" for="range-speed">Crawl Speed</label>
+          <span class="value-badge" id="val-speed">1.0x</span>
+        </div>
+        <input type="range" id="range-speed" min="0.5" max="2.0" step="0.1" value="1.0" />
+      </div>
+    </section>
+
+    <!-- DOM Ledge Climbing & Cursor Reaction -->
+    <section class="card">
+      <div class="row-between pb-10 border-b">
+        <div>
+          <span class="label-title">DOM Ledge Climbing</span>
+          <span class="sub-hint">Climb cards, headings &amp; images</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-ledges" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="pt-10">
+        <span class="label-title block-label">Cursor Reaction</span>
+        <div class="segmented-control" role="radiogroup" aria-label="Cursor Reaction">
+          <button type="button" class="seg-btn active" data-reaction="curious">Curious</button>
+          <button type="button" class="seg-btn" data-reaction="shy">Shy</button>
+          <button type="button" class="seg-btn" data-reaction="ignore">Ignore</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>2-Bone Analytical IK &bull; Zero Click Blocking</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
